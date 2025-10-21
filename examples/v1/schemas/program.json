@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Program",
+  "type": "object",
+  "required": ["id", "type", "out"],
+  "properties": {
+    "id": {"type": "string"},
+    "type": {"type": "string", "const": "Program"},
+    "out": {
+      "type": "object",
+      "oneOf": [
+        {"$ref": "#/definitions/expr"}
+      ]
+    },
+    "meta": {"type": "object"}
+  },
+  "definitions": {
+    "expr": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {"type": "string", "enum": ["const", "var", "op"]},
+        "value": {},
+        "name": {"type": "string"},
+        "op": {"type": "string"},
+        "args": {
+          "type": "array",
+          "items": {"$ref": "#/definitions/expr"}
+        }
+      }
+    }
+  }
+}

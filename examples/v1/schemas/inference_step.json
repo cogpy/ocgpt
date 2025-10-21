@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InferenceStep",
+  "type": "object",
+  "required": ["rule", "premises", "conclusion", "tv_out"],
+  "properties": {
+    "rule": {"type": "string", "enum": ["deduction", "induction", "abduction", "revision"]},
+    "premises": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "tv": {
+            "type": "object",
+            "properties": {"s": {"type": "number"}, "c": {"type": "number"}}
+          }
+        },
+        "required": ["id"]
+      }
+    },
+    "conclusion": {
+      "type": "object",
+      "properties": {"id": {"type": "string"}},
+      "required": ["id"]
+    },
+    "tv_in": {
+      "type": "object",
+      "properties": {"s": {"type": "number"}, "c": {"type": "number"}}
+    },
+    "tv_out": {
+      "type": "object",
+      "required": ["s", "c"],
+      "properties": {
+        "s": {"type": "number", "minimum": 0, "maximum": 1},
+        "c": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "notes": {"type": "string"}
+  }
+}

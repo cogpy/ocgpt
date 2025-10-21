@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Atom",
+  "type": "object",
+  "required": ["id", "type", "subtype"],
+  "properties": {
+    "id": {"type": "string"},
+    "type": {"type": "string", "enum": ["Node", "Link"]},
+    "subtype": {"type": "string"},
+    "name": {"type": "string"},
+    "out": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "IDs of outgoing Atoms (for Links)."
+    },
+    "tv": {
+      "type": "object",
+      "required": ["s", "c"],
+      "properties": {
+        "s": {"type": "number", "minimum": 0, "maximum": 1},
+        "c": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "av": {
+      "type": "object",
+      "properties": {
+        "sti": {"type": "number", "minimum": 0, "maximum": 1},
+        "lti": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "meta": {"type": "object"}
+  }
+}
