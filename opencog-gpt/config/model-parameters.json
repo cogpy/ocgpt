@@ -2,8 +2,7 @@
   "gpt_name": "OpenCog Expert",
   "version": "1.0.0",
   "created_date": "2024-10-21",
-  "
-": {
+  "focus_areas": {
     "primary": "OpenCog cognitive architecture and AGI development",
     "secondary": [
       "AtomSpace operations and data structures",
