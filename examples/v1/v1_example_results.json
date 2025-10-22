@@ -1,0 +1,260 @@
+{
+  "atomspace": {
+    "atoms": [
+      {
+        "id": "n:f76ade19-4b22-40c5-9335-2eeb7e41de1b",
+        "type": "ConceptNode",
+        "subtype": "ConceptNode",
+        "tv": {
+          "s": 0.9,
+          "c": 0.8
+        },
+        "av": {
+          "sti": 0.7999999999999999,
+          "lti": 0.5
+        },
+        "name": "Cat"
+      },
+      {
+        "id": "n:06de3c10-f842-42f9-8c4d-2a9a4d5771d6",
+        "type": "ConceptNode",
+        "subtype": "ConceptNode",
+        "tv": {
+          "s": 0.9,
+          "c": 0.8
+        },
+        "av": {
+          "sti": 0.7,
+          "lti": 0.4
+        },
+        "name": "Dog"
+      },
+      {
+        "id": "n:c706fdd4-c21c-45da-a86e-a49c62704073",
+        "type": "ConceptNode",
+        "subtype": "ConceptNode",
+        "tv": {
+          "s": 0.81,
+          "c": 0.97
+        },
+        "av": {
+          "sti": 0.9,
+          "lti": 0.7
+        },
+        "name": "Mammal"
+      },
+      {
+        "id": "n:eb9f1aeb-f190-4086-8ff2-0681b6f3d081",
+        "type": "ConceptNode",
+        "subtype": "ConceptNode",
+        "tv": {
+          "s": 0.7695,
+          "c": 0.997
+        },
+        "av": {
+          "sti": 0.9,
+          "lti": 0.8
+        },
+        "name": "Animal"
+      },
+      {
+        "id": "l:90cb9d23-37de-44e8-a4c8-6530d9bfdcab",
+        "type": "InheritanceLink",
+        "subtype": "InheritanceLink",
+        "tv": {
+          "s": 0.9,
+          "c": 0.85
+        },
+        "av": {
+          "sti": 0.1,
+          "lti": 0.0
+        },
+        "out": [
+          "n:f76ade19-4b22-40c5-9335-2eeb7e41de1b",
+          "n:c706fdd4-c21c-45da-a86e-a49c62704073"
+        ]
+      },
+      {
+        "id": "l:9a786f78-7b64-4e09-a1bf-bc4f0fa436fd",
+        "type": "InheritanceLink",
+        "subtype": "InheritanceLink",
+        "tv": {
+          "s": 0.9,
+          "c": 0.85
+        },
+        "av": {
+          "sti": 0.1,
+          "lti": 0.0
+        },
+        "out": [
+          "n:06de3c10-f842-42f9-8c4d-2a9a4d5771d6",
+          "n:c706fdd4-c21c-45da-a86e-a49c62704073"
+        ]
+      },
+      {
+        "id": "l:947bb1b4-792e-494e-929a-067efbc9b0bc",
+        "type": "InheritanceLink",
+        "subtype": "InheritanceLink",
+        "tv": {
+          "s": 0.95,
+          "c": 0.9
+        },
+        "av": {
+          "sti": 0.1,
+          "lti": 0.0
+        },
+        "out": [
+          "n:c706fdd4-c21c-45da-a86e-a49c62704073",
+          "n:eb9f1aeb-f190-4086-8ff2-0681b6f3d081"
+        ]
+      },
+      {
+        "id": "n:fcce6a15-96cb-4fc4-95d0-f95bdc07464e",
+        "type": "PredicateNode",
+        "subtype": "PredicateNode",
+        "tv": {
+          "s": 1.0,
+          "c": 0.0
+        },
+        "av": {
+          "sti": 0.0,
+          "lti": 0.0
+        },
+        "name": "likes"
+      },
+      {
+        "id": "n:084006da-ff54-4eb9-b891-5fde45643486",
+        "type": "PredicateNode",
+        "subtype": "PredicateNode",
+        "tv": {
+          "s": 1.0,
+          "c": 0.0
+        },
+        "av": {
+          "sti": 0.0,
+          "lti": 0.0
+        },
+        "name": "eats"
+      },
+      {
+        "id": "n:5e2c07f6-a7a8-47f1-8248-fab48131eef8",
+        "type": "ConceptNode",
+        "subtype": "ConceptNode",
+        "tv": {
+          "s": 1.0,
+          "c": 0.0
+        },
+        "av": {
+          "sti": 0.0,
+          "lti": 0.0
+        },
+        "name": "John"
+      },
+      {
+        "id": "n:2cb88947-5a07-458a-8472-698fc34e0b3e",
+        "type": "ConceptNode",
+        "subtype": "ConceptNode",
+        "tv": {
+          "s": 1.0,
+          "c": 0.0
+        },
+        "av": {
+          "sti": 0.0,
+          "lti": 0.0
+        },
+        "name": "Food"
+      },
+      {
+        "id": "n:64436ba7-aa4a-4a5b-ad89-cf5e1ff76a9a",
+        "type": "ConceptNode",
+        "subtype": "ConceptNode",
+        "tv": {
+          "s": 1.0,
+          "c": 0.0
+        },
+        "av": {
+          "sti": 0.0,
+          "lti": 0.0
+        },
+        "name": "Fish"
+      },
+      {
+        "id": "l:6f1706e6-2f38-4622-b02e-60a45bf0a273",
+        "type": "EvaluationLink",
+        "subtype": "EvaluationLink",
+        "tv": {
+          "s": 0.8,
+          "c": 0.7
+        },
+        "av": {
+          "sti": 0.0,
+          "lti": 0.0
+        },
+        "out": [
+          "n:fcce6a15-96cb-4fc4-95d0-f95bdc07464e",
+          "l:7fd81a88-9cf0-4dd2-9a6f-a72f2d6b5d8b"
+        ]
+      },
+      {
+        "id": "l:2af5e738-533b-47fe-9388-eb2835b396cf",
+        "type": "EvaluationLink",
+        "subtype": "EvaluationLink",
+        "tv": {
+          "s": 0.7,
+          "c": 0.6
+        },
+        "av": {
+          "sti": 0.0,
+          "lti": 0.0
+        },
+        "out": [
+          "n:084006da-ff54-4eb9-b891-5fde45643486",
+          "l:66688571-5dd5-4187-ab84-706baf2c6ef5"
+        ]
+      },
+      {
+        "id": "n:e424d7c7-3334-4a43-9f00-db7d4d1b008a",
+        "type": "ConceptNode",
+        "subtype": "ConceptNode",
+        "tv": {
+          "s": 1.0,
+          "c": 0.0
+        },
+        "av": {
+          "sti": 0.0,
+          "lti": 0.0
+        },
+        "name": "$X"
+      },
+      {
+        "id": "l:bfd7aee9-1dcf-4862-b732-07a4baecd910",
+        "type": "ImplicationLink",
+        "subtype": "ImplicationLink",
+        "tv": {
+          "s": 0.98,
+          "c": 0.95
+        },
+        "av": {
+          "sti": 0.0,
+          "lti": 0.0
+        },
+        "out": [
+          "l:6e3f5124-3451-45c2-8ca5-0f5bf7e3c44c",
+          "l:b03f521b-a48a-4dda-8aa9-bb2c493ba7d3"
+        ]
+      }
+    ],
+    "size": 16
+  },
+  "patterns": [],
+  "metadata": {
+    "version": "1.0",
+    "description": "Real Example v1 - Complete OpenCog Model Implementation Demo",
+    "components": [
+      "AtomSpace",
+      "PLN",
+      "MOSES",
+      "Pattern Mining"
+    ]
+  }
+}
