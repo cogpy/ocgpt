@@ -1,8 +1,7 @@
 # CogPrime: An Integrative Architecture for Embodied Artificial General Intelligence
 
-**Ben Goertzel**
-
-**October 2, 2012**
+**Ben Goertzel**  
+*October 2, 2012*
 
 ## Abstract
 
@@ -12,7 +11,7 @@ The CogPrime architecture for embodied AGI is overviewed, covering the core arch
 
 This is a lengthy paper with a substantial ambition: to overview CogPrime, a conceptual and technical design for a thinking machine, a software program capable of the same qualitative sort of general intelligence as human beings. Given the uncertainties attendant on all research, we cannot know for sure how far the CogPrime design will be able to take us; but it seems plausible that once fully implemented, tuned and tested, it will be able to achieve general intelligence at the human level and in some respects perhaps beyond.
 
-CogPrime is described in more detail in a forthcoming book titled Building Better Minds: The CogPrime Architecture for Artificial General Intelligence [GPGtOT13], which exceeds 1000 pages including appendices; the goal of this paper is to outline some of the key points in a more compact format.
+CogPrime is described in more detail in a forthcoming book titled *Building Better Minds: The CogPrime Architecture for Artificial General Intelligence* [GPGtOT13], which exceeds 1000 pages including appendices; the goal of this paper is to outline some of the key points in a more compact format.
 
 To allay potential confusion we offer two caveats from the outset. First, CogPrime is not a model of human neural or cognitive structure or activity. It draws heavily on knowledge about human intelligence, especially cognitive psychology; but it also deviates from the known nature of human intelligence in many ways, with a goal of providing maximal humanly-meaningful general intelligence using available computer hardware. Second, CogPrime is not proposed as the one and only holy grail path to advanced AGI. We feel confident there are multiple possible paths to advanced AGI, and that in following any of these paths, multiple theoretical and practical lessons will be learned, leading to modifications of the ideas developed and possessed along the early stages of the path. The goal here is to articulate one path that we believe makes sense to follow, one overall design that we believe can work, for achieving general intelligence that is qualitatively human-level and in many respects human-like, without emulating human neural or cognitive function in detail.
 
@@ -24,7 +23,7 @@ After the first generation of AI researchers found the task of creating human-le
 
 In the decades since the 1950s, cognitive science and neuroscience have taught us a lot about what a cognitive architecture needs to look like to support roughly human-like general intelligence. Computer hardware has advanced to the point where we can build distributed systems containing large amounts of RAM and large numbers of processors, carrying out complex tasks in real time. The AI field has spawned a host of ingenious algorithms and data structures, which have been successfully deployed for a huge variety of purposes.
 
-Due to all this progress, increasingly, there has been a call for a transition from the current focus on highly specialized "narrow AI" problem solving systems, back to confronting the more difficult issues of "human level intelligence" and more broadly "artificial general intelligence (AGI)." Recent years have seen a growing number of special sessions, workshops and conferences devoted specifically to AGI, including the annual BICA (Biologically Inspired Cognitive Architectures) Conference, and the international AGI conference series (AGI-08 , AGI-09, AGI-10, AGI-11). And, even more exciting, there are a number of contemporary R&D projects focused directly and explicitly on AGI (sometimes under the name "AGI", sometimes using related terms such as "Human Level Intelligence").
+Due to all this progress, increasingly, there has been a call for a transition from the current focus on highly specialized "narrow AI" problem solving systems, back to confronting the more difficult issues of "human level intelligence" and more broadly "artificial general intelligence (AGI)." Recent years have seen a growing number of special sessions, workshops and conferences devoted specifically to AGI, including the annual BICA (Biologically Inspired Cognitive Architectures) Conference, and the international AGI conference series (AGI-08, AGI-09, AGI-10, AGI-11). And, even more exciting, there are a number of contemporary R&D projects focused directly and explicitly on AGI (sometimes under the name "AGI", sometimes using related terms such as "Human Level Intelligence").
 
 In spite of all this progress, however, no one has yet clearly articulated a detailed, systematic design for an AGI, with potential to yield general intelligence at the human level and ultimately beyond. Perhaps the most comprehensive attempts in this direction have been the works of Stan Franklin [BF09] and Joscha Bach [Bac09], or the more classical SOAR [Lai12] and ACT-R [And96] architectures. While we feel there is much to be learned from these designs, we also feel they have significant shortcomings and lacunae alongside their considerable strengths. Detailed discussion and comparison of these and other alternative AGI approaches will not be presented here, as the paper is long enough already, but are given in the above-mentioned book that constitutes a greatly expanded version of this paper [GPGtOT13].
 
@@ -36,31 +35,238 @@ There is no consensus on why all the related technological and scientific progre
 - We have not discovered any one algorithm or approach capable of yielding the emergence of these structures;
 - Achieving the emergence of these structures within a system formed by integrating a number of different AI algorithms and structures is tricky. It requires careful attention to the manner in which these algorithms and structures are integrated; and so far the integration has not been done in the correct way.
 
-The human brain appears to be an integration of an assemblage of diverse structures and dynamics, built using common components and arranged according to a sensible cognitive architecture. However, its algorithms and structures have been honed by evolution to work closely together – they are very tightly inter-adapted, in somewhat the same way that the different organs of the body are adapted to work together. Due their close interoperation they give rise to the overall systemic behaviors that characterize human-like general intelligence. We believe that the main missing ingredient in AI so far is cognitive synergy: the fitting-together of different intelligent components into an appropriate cognitive architecture, in such a way that the components richly and dynamically support and assist each other, interrelating very closely in a similar manner to the components of the brain or body and thus giving rise to appropriate emergent structures and dynamics.
+The human brain appears to be an integration of an assemblage of diverse structures and dynamics, built using common components and arranged according to a sensible cognitive architecture. However, its algorithms and structures have been honed by evolution to work closely together – they are very tightly inter-adapted, in somewhat the same way that the different organs of the body are adapted to work together. Due their close interoperation they give rise to the overall systemic behaviors that characterize human-like general intelligence. We believe that the main missing ingredient in AI so far is **cognitive synergy**: the fitting-together of different intelligent components into an appropriate cognitive architecture, in such a way that the components richly and dynamically support and assist each other, interrelating very closely in a similar manner to the components of the brain or body and thus giving rise to appropriate emergent structures and dynamics. 
 
+Which leads us to one of the central hypotheses underlying the CogPrime approach to AGI: that **the cognitive synergy ensuing from integrating multiple symbolic and subsymbolic learning and memory components in an appropriate cognitive architecture and environment, can yield robust intelligence at the human level and ultimately beyond.**
 
----
+The reason this sort of intimate integration has not yet been explored much is that it's difficult on multiple levels, requiring the design of an architecture and its component algorithms with a view toward the structures and dynamics that will arise in the system once it is coupled with an appropriate environment. Typically, the AI algorithms and structures corresponding to different cognitive functions have been developed based on divergent theoretical principles, by disparate communities of researchers, and have been tuned for effective performance on different tasks in different environments. Making such diverse components work together in a truly synergetic and cooperative way is a tall order, yet we believe that this – rather than some particular algorithm, structure or architectural principle – is the "secret sauce" needed to create human-level AGI based on technologies available today.
 
-**Note: This is a partial conversion. The complete document contains many more sections including:**
+### 1.3 What Kind of "Intelligence" is CogPrime Aimed At?
 
-- 1.3 What Kind of 'Intelligence' is CogPrime Aimed At?
-- 1.4 Key Claims
-- 2. CogPrime and OpenCog
-- 2.1 Current and Prior Applications of OpenCog
-- 2.2 Transitioning from Virtual Agents to a Physical Robot
-- 3. Philosophical Background
-- 4. High-Level Architecture of CogPrime
-- 5. Local and Global Knowledge Representation
-- 6. Memory Types and Associated Cognitive Processes in CogPrime
-- 7. Goal-Oriented Dynamics in CogPrime
-- 8. Clarifying the Key Claims
-- 9. Measuring Incremental Progress Toward Human-Level AGI
-- 10. A CogPrime Thought Experiment: Build Me Something I
-- 11. Broader Issues
+We have mentioned "intelligence" frequently in the preceding paragraphs, but haven't specified precisely what we mean by it. In fact, a host of different definitions of intelligence have been proposed in the AGI, narrow AI, psychology, engineering and philosophy communities; Legg and Hutter [LH07] have enumerated over 70. The CogPrime design is not particularly tied to any of these; instead, it was primarily motivated by a commonsensical interpretation of intelligence, comprising a mixture of theoretical general problem solving capability, and the practical ability to display the same sorts of intelligence as humans do. However, CogPrime is consistent with a number of different recognized definitions of general intelligence.
 
-**Full document content follows below (auto-converted from PDF):**
+There are psychological definitions of intelligence (e.g. the g-factor), based on the ability to carry out particular kinds of common human problem-solving tasks effectively [KWRK05]. The design intention of CogPrime is that a fully implemented and reasonably experienced system would be able to do well at these sorts of tasks.
 
----
+There are pragmatic tests for measuring whether an AGI has achieved human-level, human-like general intelligence. In the paper "Mapping the Landscape of Human-Level AI" [AAB+ 11], resultant from the 2009 AGI Roadmap Workshop, the author and a number of co-authors discussed several examples of practical goals plausibly characterizing "human level AGI", e.g.
+
+- **Turing Test**: the classic, involving passing as a human being in an everyday conversation
+- **Virtual World or Telerobotic Turing Test**: pass as a human being, in a conversation involving controlling a virtual world avatar or a robot, alongside verbal interaction
+- **Online University Test**: attend an online university just like a human student, and graduate
+- **Physical University Test**: control a robot that attends university just like a human student, and graduates
+- **Artificial Scientist Test**: write and publish original science papers, based on ideas conceived by the AI due to its own reading of the literature
+
+Again, while we don't necessarily consider all of these as useful for motivating the early steps of AGI research, we intend that a fully realized CogPrime system would be able to succeed at them.
+
+There are mathematical definitions of general intelligence, involving formalizations of the idea that an intelligence should be judged via its average capability to achieve goals in environments (where the average is weighted so that more complex goals and environments get less weight) [Goe10b]. CogPrime is also intended to display intelligence in this sense, but with the caveat that a complete and mature CogPrime functioning as intended, would perform better according to such a measure if the goals and environments similar to everyday human goals and environments were weighted more highly.
+
+A variant of this mathematical approach to intelligence measures not only the ability of a system to achieve certain goals in certain environments, but also the amount of space and time resources expended in doing so [Goe10b]. A system that can do the same things using fewer resources would be rated more intelligent. Since CogPrime is not a theoretical design like AIXI [Hut05], but one intended for real-world near-term implementation, it is intended to be intelligent in this sense as well. That is, informally speaking: CogPrime is intended as "wholly general in principle", but, able to carry out certain kinds of intelligence-requiring tasks more rapidly and using fewer computational resources. And the kinds of tasks it can do more easily, are biased by design to reflect the nature of the human everyday world.
+
+There is a school of thought that defines intelligence via adaptiveness: the capability of a system to adapt to its environment effectively [Wan06]. CogPrime is also intended to display intelligence in this sense. Indeed, it seems to us that achieving goals in environments requires adaptation to these environments, and vice versa; so that qualitatively the various approaches to defining intelligence are largely getting at the same thing.
+
+All in all, we pragmatically conceive of general intelligence as "the ability to achieve complex goals in complex environments, using limited resources"; and we accept that any real-world general intelligence is going to be more intelligent with respect to some sorts of goals and environments than others. CogPrime has been designed with careful attention toward human-relevant goals and environment, yet is also expected to have a particular set of intellectual strengths and weaknesses different from that of humans.
+
+### 1.4 Key Claims
+
+We conclude this Introduction with a systematic list of some of the key claims to be argued for here. Not all the terms and ideas in these claims will be familiar to the reader in their technical details, but we hope their qualitative sense will be reasonably clear nonetheless. This list of claims will be revisited toward the end of the paper, where we will look back at the ideas and arguments that have been put forth in favor of them, in the intervening sections.
+
+In essence this is a list of claims such that, if the reader accepts these claims, they should probably accept that the CogPrime approach to AGI is a viable one. On the other hand if the reader rejects one or more of these claims, they may find one or more aspects of CogPrime unacceptable for a related reason:
+
+1. General intelligence (at the human level and ultimately beyond) can be achieved via creating a computational system that uses much of its resources seeking to achieve its goals, via using perception and memory to predict which actions will achieve its goals in the contexts in which it finds itself.
+
+2. To achieve general intelligence in the context of human-intelligence-friendly environments and goals using feasible computational resources, it's important that an AGI system can handle different kinds of memory (declarative, procedural, episodic, sensory, intentional, attentional) in customized but interoperable ways.
+
+3. **Cognitive synergy**: It's important that the cognitive processes associated with different kinds of memory can appeal to each other for assistance in overcoming bottlenecks in a manner that enables each cognitive process to act in a manner that is sensitive to the particularities of each others' internal representations, and that doesn't impose unreasonable delays on the overall cognitive dynamics.
+
+4. As a general principle, neither purely localized nor purely global memory is sufficient for general intelligence under feasible computational resources; "glocal" memory will be required.
+
+5. To achieve human-like general intelligence, it's important for an intelligent agent to have sensory data and motoric affordances that roughly emulate those available to humans. We don't know exactly how close this emulation needs to be, which means that our AGI systems and platforms need to support fairly flexible experimentation with virtual-world and/or robotic infrastructures.
+
+6. To work toward adult human-level, roughly human-like general intelligence, one fairly easily comprehensible path is to use environments and goals reminiscent of human childhood, and seek to advance one's AGI system along a path roughly comparable to that followed by human children.
+
+7. It is most effective to teach an AGI system aimed at roughly human-like general intelligence via a mix of spontaneous learning and explicit instruction, and to instruct it via a combination of imitation, reinforcement and correction, and a combination of linguistic and nonlinguistic instruction.
+
+8. One effective approach to teaching an AGI system human language is to supply it with some in-built linguistic facility, in the form of rule-based and statistical-linguistics-based NLP systems, and then allow it to improve and revise this facility based on experience.
+
+9. An AGI system with adequate mechanisms for handling the key types of knowledge mentioned (in item 2) above, and the capability to explicitly recognize large-scale pattern in itself, should, upon sustained interaction with an appropriate environment in pursuit of appropriate goals, emerge a variety of complex structures in its internal knowledge network, including, but not limited to:
+   - a hierarchical network, representing both a spatiotemporal hierarchy and an approximate "default inheritance" hierarchy, cross-linked;
+   - a heterarchical network of associativity, roughly aligned with the hierarchical network;
+   - a self network which is an approximate micro image of the whole network;
+   - inter-reflecting networks modeling self and others, reflecting a "mirrorhouse" design pattern [GASP08].
+
+10. Given the strengths and weaknesses of current and near-future digital computers,
+    - (a) a (loosely) neural-symbolic network is a good representation for directly storing many kinds of memory, and interfacing between those that it doesn't store directly;
+    - (b) Uncertain logic is a good way to handle declarative knowledge. To deal with the problems facing a human-level AGI, an uncertain logic must integrate imprecise probability and fuzziness with a broad scope of logical constructs. PLN is one good realization.
+    - (c) Programs are a good way to represent procedures (both cognitive and physical-action, but perhaps not including low-level motor-control procedures).
+    - (d) Evolutionary program learning is a good way to handle difficult program learning problems. Probabilistic learning on normalized programs is one effective approach to evolutionary program learning. MOSES is one good realization of this approach.
+    - (e) Multistart hill-climbing, with a strong Occam prior, is a good way to handle relatively straightforward program learning problems.
+    - (f) Activation spreading and Hebbian learning comprise a reasonable way to handle attentional knowledge (though other approaches, with greater overhead cost, may provide better accuracy and may be appropriate in some situations).
+      - Artificial economics is an effective approach to activation spreading and Hebbian learning in the context of neural-symbolic networks;
+      - ECAN is one good realization of artificial economics;
+      - A good trade-off between comprehensiveness and efficiency is to focus on two kinds of attention: processor attention (represented in CogPrime by ShortTermImportance) and memory attention (represented in CogPrime by LongTermImportance).
+    - (g) Simulation is a good way to handle episodic knowledge (remembered and imagined). Running an internal world simulation engine is an effective way to handle simulation.
+    - (h) Hybridization of one's integrative neural-symbolic system with a spatiotemporally hierarchical deep learning system is an effective way to handle representation and learning of low-level sensorimotor knowledge. DeSTIN is one example of a deep learning system of this nature that can be effective in this context.
+    - (i) One effective way to handle goals is to represent them declaratively, and allocate attention among them economically. CogPrime's PLN/ECAN based framework for handling intentional knowledge is one good realization.
+
+11. It is important for an intelligent system to have some way of recognizing large-scale patterns in itself, and then embodying these patterns as new, localized knowledge items in its memory (a dynamic called the "cognitive equation" in [Goe94]). Given the use of a neural-symbolic network for knowledge representation, a graph-mining based "map formation" heuristic is one good way to do this.
+
+12. **Occam's Razor**: Intelligence is closely tied to the creation of procedures that achieve goals in environments in the simplest possible way. Each of an AGI system's cognitive algorithms should embody a simplicity bias in some explicit or implicit form.
+
+13. An AGI system, if supplied with a commonsensically ethical goal system and an intentional component based on rigorous uncertain inference, should be able to reliably achieve a much higher level of commonsensically ethical behavior than any human being.
+
+14. Once sufficiently advanced, an AGI system with a logic-based declarative knowledge approach and a program-learning-based procedural knowledge approach should be able to radically self-improve via a variety of methods, including supercompilation and automated theorem-proving.
+
+## 2. CogPrime and OpenCog
+
+Many of the technical details of the CogPrime design have been previously presented online in a wikibook [Goe10a]; and the basic ideas of the design have been presented briefly in a series of conference papers [GPPG06, Goe09c]. But the overall design has not been presented in a coherent and systematic way before this paper and the associated book [GPGtOT13].
+
+CogPrime is closely allied with the OpenCog open-source AI software framework. But the two are not synonymous. OpenCog is a more general framework, suitable for implementation of a variety of specialized AI applications as well as, potentially, alternate AGI designs. And CogPrime could potentially be implemented other than within the OpenCog framework. The particular implementation of CogPrime in OpenCog is called OpenCogPrime. OpenCog was designed with the purpose, alongside others, of enabling efficient, scalable implementation of the full CogPrime design.
+
+### 2.1 Current and Prior Applications of OpenCog
+
+To give greater understanding regarding the practical platform for current work aimed at realizing CogPrime, we now briefly discuss some of the practicalities of work done with the OpenCog system that currently implements parts of the CogPrime architecture.
+
+OpenCog, the open-source software framework underlying the "OpenCogPrime" (currently partial) implementation of the CogPrime architecture, has been used for commercial applications in the area of natural language processing and data mining. For instance, see [GPPG06] where OpenCogPrime's PLN reasoning and RelEx language processing are combined to do automated biological hypothesis generation based on information gathered from PubMed abstracts. [Loo06] describes the use of OpenCog's MOSES component for biological data analysis; this use has been extended considerably in a variety of unpublished commercial applications since that point, in domains such as financial prediction, genetics, marketing data analysis and natural language processing. Most relevantly to the present work, OpenCog has also been used to control virtual agents in virtual worlds [GEA08].
+
+Prototype work done during 2007-2008 involved using an OpenCog variant called the OpenPetBrain to control virtual dogs in a virtual world (see Figure 1 for a screenshot of an OpenPetBrain-controlled virtual dog). While these OpenCog virtual dogs did not display intelligence closely comparable to that of real dogs (or human children), they did demonstrate a variety of interesting and relevant functionalities including:
+
+- learning new behaviors based on imitation and reinforcement
+- responding to natural language commands and questions, with appropriate actions and natural language replies
+- spontaneous exploration of their world, remembering their experiences and using them to bias future learning and linguistic interaction
+
+One current OpenCog initiative [GPC+ 11] involves extending the virtual dog work via using OpenCog to control virtual agents in a game world inspired by the game Minecraft. These agents are initially specifically concerned with achieving goals in a game world via constructing structures with blocks and carrying out simple English communications. Representative example tasks would be:
+
+- Learning to build steps or ladders to get desired objects that are high up
+- Learning to build a shelter to protect itself from aggressors
+- Learning to build structures resembling structures that its shown (even if the available materials are a bit different)
+- Learning how to build bridges to cross chasms
+
+Of course, the AI significance of learning tasks like this all depends on what kind of feedback the system is given, and how complex its environment is. It would be relatively simple to make an AI system do things like this in a highly specialized way, but that is not the intent of the project – the goal is to have the system learn to carry out tasks like this using general learning mechanisms and a general cognitive architecture, based on embodied experience and only scant feedback from human teachers. If successful, this will provide an outstanding platform for ongoing AGI development, as well as a visually appealing and immediately meaningful demo for OpenCog.
+
+A few of the specific tasks that are the focus of this project teams current work at time of writing include:
+
+- Watch another character build steps to reach a high-up object
+- Figure out via imitation of this that, in a different context, building steps to reach a high up object may be a good idea
+- Also figure out that, if it wants a certain high-up object but there are no materials for building steps available, finding some other way to get elevated will be a good idea that may help it get the object (including e.g. building a ladder, or asking someone tall to pick it up, etc.)
+- Figure out that, if the character wants to hide its valued object from a creature much larger than it, it should build a container with a small hole that the character can get through, but the creature cannot
+
+### 2.2 Transitioning from Virtual Agents to a Physical Robot
+
+In 2009-2010, preliminary experiments were conducted using OpenCog to control a Nao robot [GdG08]. These involved hybridizing OpenCog with a separate subsystem handling low-level perception and action. This hybridization was accomplished in an extremely simplistic way, however. How to do this right is a topic treated in detail in [GPGtOT13] and [Goe12] and only briefly touched here.
+
+We suspect that reasonable level of capability will be achievable by simply interposing DeSTIN [ARC09] (or some other reasonably capable "hierarchical temporal memory" type sensorimotor system) as a perception/action "black box" between OpenCog and a robot. However, we also suspect that to achieve robustly intelligent robotics we must go beyond this approach, and connect robot perception and actuation software with OpenCogPrime in a "white box" manner that allows intimate dynamic feedback between perceptual, motoric, cognitive and linguistic functions. We suspect this may be achievable, for example, via the creation and real-time utilization of links between the nodes in CogPrime's and DeSTIN's internal networks.
+
+## 3. Philosophical Background
+
+The creation of advanced AGI systems is an engineering endeavor, whose achievement will require significant input from science and mathematics; and also, we believe, guidance from philosophy. Having an appropriate philosophy of mind certainly is no guarantee of creating advanced AGI system; philosophy only goes so far. However, having a badly inappropriate philosophy of mind may be a huge barrier in the creation of AGI systems. For instance, we believe that philosophical views holding that
+
+- the contents of a mind are best understood purely as a set of logical propositions, terms or predicates; or that
+- brains and other intelligence-substrate systems are necessarily so complex and emergence-dependent that it's hopeless to try to understand how they represent any particular thing, or carry out any particular action
+
+are particularly poorly suited to guide AGI development, and are likely to directly push adherents in the wrong directions AGI-design-wise.
+
+The development of the CogPrime design has been substantially guided by a philosophy of mind called "patternism" [Goe06]. This guidance should not be overstated; CogPrime is an integrative design formed via the combination of a number of different philosophical, scientific and engineering ideas, and the success or failure of the design doesn't depend on any particular philosophical understanding of intelligence. In that sense, the more abstract notions summarized in this section should be considered "optional" rather than critical in a CogPrime context. However, due to the core role patternism has played in the development of CogPrime, understanding a few things about general patternist philosophy will be helpful for understanding CogPrime, even for those readers who are not philosophically inclined. Those readers who are philosophically inclined, on the other hand, are urged to read *The Hidden Pattern* [Goe06] and then interpret the particulars of CogPrime in this light.
+
+The patternist philosophy of mind is a general approach to thinking about intelligent systems. It is based on the very simple premise that mind is made of pattern – and that a mind is a system for recognizing patterns in itself and the world, critically including patterns regarding which procedures are likely to lead to the achievement of which goals in which contexts.
+
+Pattern as the basis of mind is not in itself is a very novel idea; it is present, for instance, in the 19th-century philosophy of Charles Peirce [Pei34], in the writings of contemporary philosophers Daniel Dennett [Den91] and Douglas Hofstadter [Hof79, Hof96], in Benjamin Whorf's [Who64] linguistic philosophy and Gregory Bateson's [Bat79] systems theory of mind and nature. Bateson spoke of the Metapattern: "that it is pattern which connects." In our prior writings on philosophy of mind, an effort has been made to pursue this theme more thoroughly than has been done before, and to articulate in detail how various aspects of human mind and mind in general can be well-understood by explicitly adopting a patternist perspective.
+
+In the patternist perspective, "pattern" is generally defined as "representation as something simpler." Thus, for example, if one measures simplicity in terms of bit-count, then a program compressing an image would be a pattern in that image. But if one uses a simplicity measure incorporating run-time as well as bit-count, then the compressed version may or may not be a pattern in the image, depending on how one's simplicity measure weights the two factors. This definition encompasses simple repeated patterns, but also much more complex ones. While pattern theory has typically been elaborated in the context of computational theory, it is not intrinsically tied to computation; rather, it can be developed in any context where there is a notion of "representation" or "production" and a way of measuring simplicity. One just needs to be able to assess the extent to which P represents or produces X, and then to compare the simplicity of P and X; and then one can assess whether P is a pattern in X. A formalization of this notion of pattern is given in [Goe06]; the crux is simply
+
+**Definition 1** Given a metric space (M, d), and two functions c : M → [0, ∞] (the "simplicity measure") and F : M → M (the "production relationship"), we say that P ∈ M is a pattern in X ∈ M to the degree
+
+ι^P_X = (1 - d(F(P), X)/c(X)) · (c(X) - c(P))/c(X)
+
+This degree is called the pattern intensity of P in X.
+
+Next, in patternism the mind of an intelligent system is conceived as the (fuzzy) set of patterns in that system, and the set of patterns emergent between that system and other systems with which it interacts. The latter clause means that the patternist perspective is inclusive of notions of distributed intelligence [Hut96]. Basically, the mind of a system is the fuzzy set of different simplifying representations of that system that may be adopted.
+
+In the patternist perspective, intelligence is conceived as roughly indicated above: as the ability to achieve complex goals in complex environments; where complexity itself may be defined as the possession of a rich variety of patterns. A mind is thus a collection of patterns that is associated with a persistent dynamical process that achieves highly-patterned goals in highly-patterned environments.
+
+An additional hypothesis made within the patternist philosophy of mind is that reflection is critical to intelligence. This lets us conceive an intelligent system as a dynamical system that recognizes patterns in its environment and itself, as part of its quest to achieve complex goals.
+
+While this approach is quite general, it is not vacuous; it gives a particular structure to the tasks of analyzing and synthesizing intelligent systems. About any would-be intelligent system, we are led to ask questions such as:
+
+- How are patterns represented in the system? That is, how does the underlying infrastructure of the system give rise to the displaying of a particular pattern in the system's behavior?
+- What kinds of patterns are most compactly represented within the system?
+- What kinds of patterns are most simply learned?
+- What learning processes are utilized for recognizing patterns?
+- What mechanisms are used to give the system the ability to introspect (so that it can recognize patterns in itself)?
+
+Now, these same sorts of questions could be asked if one substituted the word "pattern" with other words like "knowledge" or "information". However, we have found that asking these questions in the context of pattern leads to more productive answers, avoiding unproductive byways and also tying in very nicely with the details of various existing formalisms and algorithms for knowledge representation and learning.
+
+Among the many kinds of patterns in intelligent systems, **semiotic patterns** are particularly interesting ones. Peirce decomposed these into three categories:
+
+- **iconic patterns**, which are patterns of contextually important internal similarity between two entities (e.g. an iconic pattern binds a picture of a person to that person)
+- **indexical patterns**, which are patterns of spatiotemporal co-occurrence (e.g. an indexical pattern binds a wedding dress and a wedding)
+- **symbolic patterns**, which are patterns indicating that two entities are often involved in the same relationships (e.g. a symbolic pattern between the number "5" (the symbol) and various sets of 5 objects (the entities that the symbol is taken to represent))
+
+Of course, some patterns may span more than one of these semiotic categories; and there are also some patterns that don't fall neatly into any of these categories. But the semiotic patterns are particularly important ones; and symbolic patterns have played an especially large role in the history of AI, because of the radically different approaches different researchers have taken to handling them in their AI systems. Mathematical logic and related formalisms provide sophisticated mechanisms for combining and relating symbolic patterns ("symbols"), and some AI approaches have focused heavily on these, sometimes more so than on the identification of symbolic patterns in experience or the use of them to achieve practical goals.
+
+Pursuing the patternist philosophy in detail leads to a variety of particular hypotheses and conclusions about the nature of mind. Following from the view of intelligence in terms of achieving complex goals in complex environments, comes a view in which the dynamics of a cognitive system are understood to be governed by two main forces:
+
+- **self-organization**, via which system dynamics cause existing system patterns to give rise to new ones
+- **goal-oriented behavior**, which has been defined more rigorously in [Goe10b], but basically amounts to a system interacting with its environment in a way that appears like an attempt to maximize some reasonably simple function
+
+Self-organized and goal-oriented behavior must be understood as cooperative aspects. For instance – to introduce an example that will be elaborated in more detail below – an agent is asked to build a surprising structure out of blocks and does so, this is goal-oriented. But the agent's ability to carry out this goal-oriented task will be greater if it has previously played around with blocks a lot in an unstructured, spontaneous way. And the "nudge toward creativity" given to it by asking it to build a surprising blocks structure may cause it to explore some novel patterns, which then feed into its future unstructured blocks play.
+
+Based on these concepts, as argued in detail in [Goe06], several primary dynamical principles may be posited, including the following. For consistency of explanation, we will illustrate these principles with examples from the "playing with blocks" domain, which has the advantage of simplicity, and also of relating closely to our current work with OpenCog-controlled video game agents. However, the readers should not get the impression that CogPrime has somehow been specialized for this sort of domain; it has not been. The principles:
+
+- **Evolution**, conceived as a general process via which patterns within a large population thereof are differentially selected and used as the basis for formation of new patterns, based on some "fitness function" that is generally tied to the goals of the agent
+  - *Example*: If trying to build a blocks structure that will surprise Bob, an agent may simulate several procedures for building blocks structures in its "mind's eye", assessing for each one the expected degree to which it might surprise Bob. The search through procedure space could be conducted as a form of evolution, via an evolutionary algorithm such as CogPrime's MOSES (to be discussed below).
+
+- **Autopoiesis**: the process by which a system of interrelated patterns maintains its integrity, via a dynamic in which whenever one of the patterns in the system begins to decrease in intensity, some of the other patterns increase their intensity in a manner that causes the troubled pattern to increase in intensity again
+  - *Example*: An agent's set of strategies for building the base of a tower, and its set of strategies for building the middle part of a tower, are likely to relate autopoietically. If the system partially forgets how to build the base of a tower, then it may regenerate this missing knowledge via using its knowledge about how to build the middle part (i.e., it knows it needs to build the base in a way that will support good middle parts). Similarly if it partially forgets how to build the middle part, then it may regenerate this missing knowledge via using its knowledge about how to build the base (i.e. it knows a good middle part should fit in well with the sorts of base it knows are good).
+  - This same sort of interdependence occurs between pattern-sets containing more than two elements
+  - Sometimes (as in the above example) autopoietic interdependence in the mind is tied to interdependencies in the physical world, sometimes not.
+
+- **Association**. Patterns, when given attention, spread some of this attention to other patterns that they have previously been associated with in some way. Furthermore, there is Peirce's law of mind [Pei34], which could be paraphrased in modern terms as stating that the mind is an associative memory network, whose dynamics dictate that every idea in the memory is an active agent, continually acting on those ideas with which the memory associates it.
+  - *Example*: Building a blocks structure that resembles a tower, spreads attention to memories of prior towers the agents has seen, and also to memories of people whom the agent knows has seen towers, and structures it has built at the same time as towers, structures that resemble towers in various respects, etc.
+
+- **Differential attention allocation / credit assignment**. Patterns that have been valuable for goal-achievement are given more attention, and are encouraged to participate in giving rise to new patterns.
+  - *Example*: Perhaps in a prior instance of the task "build me a surprising structure out of blocks," searching through memory for non-blocks structures that the agent has played with has proved a useful cognitive strategy. In that case, when the task is posed to the agent again, it should tend to allocate disproportionate resources to this strategy.
+
+- **Pattern creation**. Patterns that have been valuable for goal-achievement are mutated and combined with each other to yield new patterns.
+  - *Example*: Building towers has been useful in a certain context, but so has building structures with a large number of triangles. Why not build a tower out of triangles? Or maybe a vaguely tower-like structure that uses more triangles than a tower easily could?
+  - *Example*: Building an elongated block structure resembling a table was successful in the past, as was building a structure resembling a very flat version of a chair. Generalizing, maybe building distorted versions of furniture is good. Or maybe it is building distorted version of any previously perceived objects that is good. Or maybe both, to different degrees....
+
+Next, for a variety of reasons outlined in [Goe06] it becomes appealing to hypothesize that the network of patterns in an intelligent system must give rise to the following large-scale emergent structures:
+
+- **Hierarchical network**. Patterns are habitually in relations of control over other patterns that represent more specialized aspects of themselves.
+  - *Example*: The pattern associated with "tall building" has some control over the pattern associated with "tower", as the former represents a more general concept ... and "tower" has some control over "Eiffel tower", etc.
+
+- **Heterarchical network**. The system retains a memory of which patterns have previously been associated with each other in any way.
+  - *Example*: "Tower" and "snake" are distant in the natural pattern hierarchy, but may be associatively/heterarchically linked due to having a common elongated structure. This heterarchical linkage may be used for many things, e.g. it might inspire the creative construction of a tower with a snake's head.
+
+- **Dual network**. Hierarchical and heterarchical structures are combined, with the dynamics of the two structures working together harmoniously. Among many possible ways to hierarchically organize a set of patterns, the one used should be one that causes hierarchically nearby patterns to have many meaningful heterarchical connections; and of course, there should be a tendency to search for heterarchical connections among hierarchically nearby patterns.
+  - *Example*: While the set of patterns hierarchically nearby "tower" and the set of patterns heterarchically nearby "tower" will be quite different, they should still have more overlap than random pattern-sets of similar sizes. So, if looking for something else heterarchically near "tower", using the hierarchical information about "tower" should be of some use, and vice versa
+  - In PLN, hierarchical relationships correspond to Atoms A and B so that InheritanceAB and InheritanceBA have highly dissimilar strength; and heterarchical relationships correspond to IntensionalSimilarity relationships. The dual network structure then arises when intensional and extensional inheritance approximately correlate with each other, so that inference about either kind of inheritance assists with figuring out about the other kind.
+
+- **Self structure**. A portion of the network of patterns forms into an approximate image of the overall network of patterns.
+  - *Example*: Each time the agent builds a certain structure, it observes itself building the structure, and its role as "builder of a tall tower" (or whatever the structure is) becomes part of its self-model. Then when it is asked to build something new, it may consult its self-model to see if it believes itself capable of building that sort of thing (for instance, if it is asked to build something very large, its self-model may tell it that it lacks persistence for such projects, so it may reply "I can try, but I may wind up not finishing it").
+
+If the patternist theory of mind presented in [Goe06] is indeed appropriate as a guide for AGI work, then the success of CogPrime as a design will depend largely on whether these high-level structures and dynamics can be made to emerge from the synergetic interaction of CogPrime's representation and algorithms, when they are utilized to control an appropriate agent in an appropriate environment. The extended treatment of CogPrime given in [GPGtOT13], takes care to specifically elaborate how each of these abstract concepts arises concretely from CogPrime's structures and algorithms. In the more concise treatment given here, we will touch this aspect only lightly.
+
+### 3.1 A Mind-World Correspondence Principle
+
+Beyond patternist philosophy per se, an additional philosophical principle has guided CogPrime design; this is the "mind-world correspondence principle", which enlarges on the notion of "intelligence as adaptation to environments" mentioned above.
+
+Real-world minds are always adapted to certain classes of environments and goals. As we have noted above, even a system of vast general intelligence, subject to real-world space and time constraints, will necessarily be more efficient at some kinds of learning than others. Thus, one approach to analyzing general intelligence is to look at the relationship between minds and worlds where a world is conceived as an environment and a set of goals defined in terms of that environment.
+
+An informal version of the "mind-world correspondence principle" given in [Goe11] is as follows: For intelligence to occur, there has to be a natural correspondence between the transition-sequences of world-states and the corresponding transition-sequences of mind-states, at least in the cases of transition-sequences leading to relevant goals. A slightly more rigorous version is:
+
+**MIND-WORLD CORRESPONDENCE-PRINCIPLE**. For a mind to work intelligently toward certain goals in a certain world, there should be a nice mapping from goal-directed sequences of world-states into sequences of mind-states, where nice means that a world-state-sequence W composed of two parts W₁ and W₂, gets mapped into a mind-state-sequence M composed of two corresponding parts M₁ and M₂.
+
+What's nice about this principle is that it relates the decomposition of the world into parts, to the decomposition of the mind into parts. (A more fully formalized statement of the principle involves mathematical concepts that won't be introduced here for risk of digression.)
+
+Each component of CogPrime has been carefully thought-through in terms of this conceptual principle; i.e. it has been designed so that its internal dynamics are decomposable in a way that maps into everyday human goals and environment in a way that matches the natural decomposition of the dynamics of these goals and environments. This aspect of the CogPrime design will not be highlighted here due to space considerations, but is a persistent theme in the longer treatment in [GPGtOT13].
+
+## 4. High-Level Architecture of CogPrime
+
+The above philosophical principles would be consistent with a very wide variety of concrete AGI designs. CogPrime has not been directly derived from these philosophical principles; rather, it has been created via beginning with a combination of human cognitive psychology and computer science algorithms and structures, and then shaping this combination so as to yield a system that appears likely to be conformant with these philosophical principles, as well as being computationally feasible on current hardware and containing cognitive structures and dynamics roughly homologous to the key human ones.
+
+Figures 2, 3, 5 and 6 depict the high-level architecture of CogPrime. A key underlying principle is: **the use of multiple cognitive processes associated with multiple types of memory to enable an intelligent agent to execute the procedures that it believes have the best probability of working toward its goals in its current context.** In a robot preschool context, for example, the top-level goals would be everyday things such as pleasing the teacher, learning new information and skills, and protecting the robot's body. Figure 4 shows part of the architecture via which cognitive processes interact with each other, via commonly acting on the AtomSpace knowledge repository.
+
+It is interesting to compare these diagrams to the integrative human cognitive architecture diagram given in [GIW12], which is intended to compactly overview the structure of human cognition as currently understood. The main difference is that the CogPrime diagrams commit to specific structures (e.g. knowledge representations) and processes, whereas the generic integrative architecture diagram refers merely to types of structures and processes. For instance, the integrative diagram refers generally to declarative knowledge and learning, whereas the CogPrime diagram refers to PLN, as a specific system for reasoning and learning about declarative knowledge. In [GPGtOT13] a table is provided articulating the key connections between the components of the CogPrime diagram and the well-known human cognitive structures/processes represented in integrative diagram, thus indicating the general cognitive functions instantiated by each of the CogPrime components.
 
 CogPrime: An Integrative Architecture for Embodied Artificial
 General Intelligence
@@ -2584,3 +2790,85 @@ by distributed maps. The ”chicken” ConceptNode, when important, will tend to
 important – and vice versa. Part of the overall chicken concept possessed by the system is expressed by
 the explicit links coming out of the chicken ConceptNode, and part is represented only by the distributed
 chicken map as a whole.
+
+---
+
+## References
+
+[AAB+ 11] Sam Adams, Itamar Arel, Joscha Bach, Robert Coop, Rod Furlan, Ben Goertzel, J. Storrs Hall, Alexei Samsonovich, Matthias Scheutz, Matthew Schlesinger, Stuart C Shapiro, and John Sowa. Mapping the landscape of human-level artificial general intelligence. *Artificial Intelligence Magazine*, 2011.
+
+[AABL02] Nancy Alvarado, Sam S. Adams, Steve Burbeck, and Craig Latta. Beyond the turing test: Performance metrics for evaluating a computer simulation of the human mind. *Development and Learning, International Conf. on*, 0, 2002.
+
+[And96] John R. Anderson. *The Architecture of Cognition*. Lawrence Erlbaum Associates, 1996.
+
+[ARC09] I. Arel, D. Rose, and R. Coop. Destin: A scalable deep learning architecture with application to high-dimensional robust pattern recognition. *Proc. AAAI Workshop on Biologically Inspired Cognitive Architectures*, 2009.
+
+[Bac09] Joscha Bach. *Principles of Synthetic Intelligence*. Oxford University Press, 2009.
+
+[Bat79] Gregory Bateson. *Mind and Nature: A Necessary Unity*. New York: Ballantine, 1979.
+
+[BF09] Bernard Baars and Stan Franklin. Consciousness is computational: The lida model of global workspace theory. *International Journal of Machine Consciousness*, 2009.
+
+[Bol98] B. Bollobas. *Modern Graph Theory*. Springer, 1998.
+
+[Den91] Daniel Dennett. *Brainstorms*. Cambridge MA: MIT Press, 1991.
+
+[GASP08] Ben Goertzel, Onar Aam, Tony Smith, and Kent Palmer. Mirror neurons, mirrorhouses, and the algebraic structure of the self. *Cybernetics and Human Knowing*, 2008.
+
+[GB09] Ben Goertzel and Stephan Vladimir Bugaj. Agi preschool. In *Proc. of the Second Conf. on Artificial General Intelligence*. Atlantis Press, 2009.
+
+[GdG08] Ben Goertzel and Hugo de Garis. Xia-man: An extensible, integrative architecture for intelligent humanoid robotics. pages 86–90, 2008.
+
+[GEA08] Ben Goertzel and Cassio Pennachin Et Al. An integrative methodology for teaching embodied non-linguistic agents, applied to virtual animals in second life. In *Proc.of the First Conf. on AGI*. IOS Press, 2008.
+
+[GIGH08] B. Goertzel, M. Ikle, I. Goertzel, and A. Heljakka. *Probabilistic Logic Networks*. Springer, 2008.
+
+[GIW12] Ben Goertzel, Matt Ikle', and Jared Wigmore. The architecture of human-like general intelligence. In *Foundations of Artificial General Intelligence*, 2012.
+
+[Goe94] Ben Goertzel. *Chaotic Logic*. Plenum, 1994.
+
+[Goe06] Ben Goertzel. *The Hidden Pattern*. Brown Walker, 2006.
+
+[Goe09c] Ben Goertzel. Opencog prime: A cognitive synergy based architecture for embodied artificial general intelligence. In *ICCI 2009*, Hong Kong, 2009.
+
+[Goe10a] Ben Goertzel. Opencogprime wikibook. *OpenCog Wiki Site*, 2010. http://wiki.opencog.org/w/OpenCogPrime:WikiBook.
+
+[Goe10b] Ben Goertzel. Toward a formal definition of real-world general intelligence. In *Proceedings of AGI-10*, 2010.
+
+[Goe11] Ben Goertzel. The mind-world correspondence principle. *Dynamical Psychology*, 2011. http://wp.dynapsyc.org/.
+
+[Goe12] Ben Goertzel. Perception processing for general intelligence: Bridging the symbolic/subsymbolic gap. *Proceedings of AGI-12*, 2012.
+
+[GPC+ 11] Ben Goertzel, Joel Pitt, Zhenhua Cai, Jared Wigmore, Deheng Huang, Nil Geisweiller, Ruiting Lian, and Gino Yu. Integrative general intelligence for controlling game ai in a minecraft-like environment. In *Proc. of BICA 2011*, 2011.
+
+[GPGtOT13] B. Goertzel, Cassio Pennachin, Nil Geisweiller, and the OpenCog Team. *Building Better Minds: An Architecture for Artificial General Intelligence*. In preparation, 2013.
+
+[GPPG06] Ben Goertzel, Hugo Pinto, Cassio Pennachin, and Izabela Freire Goertzel. Using dependency parsing and probabilistic inference to extract relationships between genes, proteins and malignancies implicit among multiple biomedical research abstracts. In *Proc. of Bio-NLP 2006*, 2006.
+
+[GW11] Ben Goertzel and Jared Wigmore. Cognitive synergy is tricky. *Chinese Journal of Mind and Computation*, 2011.
+
+[Hof79] Douglas Hofstadter. *Gödel, Escher, Bach: An Eternal Golden Braid*. Basic, 1979.
+
+[Hof96] Douglas Hofstadter. *Fluid Concepts and Creative Analogies*. Basic Books, 1996.
+
+[Hut96] Edwin Hutchins. *Cognition in the Wild*. MIT Press, 1996.
+
+[Hut05] Marcus Hutter. *Universal Artificial Intelligence: Sequential Decisions based on Algorithmic Probability*. Springer, 2005.
+
+[Kur06] Ray Kurzweil. *The Singularity is Near*. 2006.
+
+[KWRK05] R W Kamphaus, A P Winsor, E W Rowe, and S Kim. A history of intelligence test interpretation. In *Contemporary intellectual assessment: Theories, tests, and issues*, Ed. by D.P. Flanagan and P.L. Harrison, page 2338, 2005.
+
+[Lai12] John E Laird. *The Soar Cognitive Architecture*. MIT Press, 2012.
+
+[LH07] Shane Legg and Marcus Hutter. A collection of definitions of intelligence. In *Advances in Artificial General Intelligence*. IOS, 2007.
+
+[Loo06] Moshe Looks. *Competent Program Evolution*. PhD Thesis, Computer Science Department, Washington University, 2006.
+
+[Pei34] C. Peirce. *Collected papers: Volume V. Pragmatism and pragmaticism*. Harvard University Press. Cambridge MA., 1934.
+
+[Tur50] Alan Turing. Computing machinery and intelligence. *Mind*, 59, 1950.
+
+[Wan06] Pei Wang. *Rigid Flexibility: The Logic of Intelligence*. Springer, 2006.
+
+[Who64] Benjamin Lee Whorf. *Language, Thought and Reality*. 1964.
