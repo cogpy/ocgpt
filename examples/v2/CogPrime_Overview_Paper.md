@@ -2790,3 +2790,85 @@ by distributed maps. The ”chicken” ConceptNode, when important, will tend to
 important – and vice versa. Part of the overall chicken concept possessed by the system is expressed by
 the explicit links coming out of the chicken ConceptNode, and part is represented only by the distributed
 chicken map as a whole.
+
+---
+
+## References
+
+[AAB+ 11] Sam Adams, Itamar Arel, Joscha Bach, Robert Coop, Rod Furlan, Ben Goertzel, J. Storrs Hall, Alexei Samsonovich, Matthias Scheutz, Matthew Schlesinger, Stuart C Shapiro, and John Sowa. Mapping the landscape of human-level artificial general intelligence. *Artificial Intelligence Magazine*, 2011.
+
+[AABL02] Nancy Alvarado, Sam S. Adams, Steve Burbeck, and Craig Latta. Beyond the turing test: Performance metrics for evaluating a computer simulation of the human mind. *Development and Learning, International Conf. on*, 0, 2002.
+
+[And96] John R. Anderson. *The Architecture of Cognition*. Lawrence Erlbaum Associates, 1996.
+
+[ARC09] I. Arel, D. Rose, and R. Coop. Destin: A scalable deep learning architecture with application to high-dimensional robust pattern recognition. *Proc. AAAI Workshop on Biologically Inspired Cognitive Architectures*, 2009.
+
+[Bac09] Joscha Bach. *Principles of Synthetic Intelligence*. Oxford University Press, 2009.
+
+[Bat79] Gregory Bateson. *Mind and Nature: A Necessary Unity*. New York: Ballantine, 1979.
+
+[BF09] Bernard Baars and Stan Franklin. Consciousness is computational: The lida model of global workspace theory. *International Journal of Machine Consciousness*, 2009.
+
+[Bol98] B. Bollobas. *Modern Graph Theory*. Springer, 1998.
+
+[Den91] Daniel Dennett. *Brainstorms*. Cambridge MA: MIT Press, 1991.
+
+[GASP08] Ben Goertzel, Onar Aam, Tony Smith, and Kent Palmer. Mirror neurons, mirrorhouses, and the algebraic structure of the self. *Cybernetics and Human Knowing*, 2008.
+
+[GB09] Ben Goertzel and Stephan Vladimir Bugaj. Agi preschool. In *Proc. of the Second Conf. on Artificial General Intelligence*. Atlantis Press, 2009.
+
+[GdG08] Ben Goertzel and Hugo de Garis. Xia-man: An extensible, integrative architecture for intelligent humanoid robotics. pages 86–90, 2008.
+
+[GEA08] Ben Goertzel and Cassio Pennachin Et Al. An integrative methodology for teaching embodied non-linguistic agents, applied to virtual animals in second life. In *Proc.of the First Conf. on AGI*. IOS Press, 2008.
+
+[GIGH08] B. Goertzel, M. Ikle, I. Goertzel, and A. Heljakka. *Probabilistic Logic Networks*. Springer, 2008.
+
+[GIW12] Ben Goertzel, Matt Ikle', and Jared Wigmore. The architecture of human-like general intelligence. In *Foundations of Artificial General Intelligence*, 2012.
+
+[Goe94] Ben Goertzel. *Chaotic Logic*. Plenum, 1994.
+
+[Goe06] Ben Goertzel. *The Hidden Pattern*. Brown Walker, 2006.
+
+[Goe09c] Ben Goertzel. Opencog prime: A cognitive synergy based architecture for embodied artificial general intelligence. In *ICCI 2009*, Hong Kong, 2009.
+
+[Goe10a] Ben Goertzel. Opencogprime wikibook. *OpenCog Wiki Site*, 2010. http://wiki.opencog.org/w/OpenCogPrime:WikiBook.
+
+[Goe10b] Ben Goertzel. Toward a formal definition of real-world general intelligence. In *Proceedings of AGI-10*, 2010.
+
+[Goe11] Ben Goertzel. The mind-world correspondence principle. *Dynamical Psychology*, 2011. http://wp.dynapsyc.org/.
+
+[Goe12] Ben Goertzel. Perception processing for general intelligence: Bridging the symbolic/subsymbolic gap. *Proceedings of AGI-12*, 2012.
+
+[GPC+ 11] Ben Goertzel, Joel Pitt, Zhenhua Cai, Jared Wigmore, Deheng Huang, Nil Geisweiller, Ruiting Lian, and Gino Yu. Integrative general intelligence for controlling game ai in a minecraft-like environment. In *Proc. of BICA 2011*, 2011.
+
+[GPGtOT13] B. Goertzel, Cassio Pennachin, Nil Geisweiller, and the OpenCog Team. *Building Better Minds: An Architecture for Artificial General Intelligence*. In preparation, 2013.
+
+[GPPG06] Ben Goertzel, Hugo Pinto, Cassio Pennachin, and Izabela Freire Goertzel. Using dependency parsing and probabilistic inference to extract relationships between genes, proteins and malignancies implicit among multiple biomedical research abstracts. In *Proc. of Bio-NLP 2006*, 2006.
+
+[GW11] Ben Goertzel and Jared Wigmore. Cognitive synergy is tricky. *Chinese Journal of Mind and Computation*, 2011.
+
+[Hof79] Douglas Hofstadter. *Gödel, Escher, Bach: An Eternal Golden Braid*. Basic, 1979.
+
+[Hof96] Douglas Hofstadter. *Fluid Concepts and Creative Analogies*. Basic Books, 1996.
+
+[Hut96] Edwin Hutchins. *Cognition in the Wild*. MIT Press, 1996.
+
+[Hut05] Marcus Hutter. *Universal Artificial Intelligence: Sequential Decisions based on Algorithmic Probability*. Springer, 2005.
+
+[Kur06] Ray Kurzweil. *The Singularity is Near*. 2006.
+
+[KWRK05] R W Kamphaus, A P Winsor, E W Rowe, and S Kim. A history of intelligence test interpretation. In *Contemporary intellectual assessment: Theories, tests, and issues*, Ed. by D.P. Flanagan and P.L. Harrison, page 2338, 2005.
+
+[Lai12] John E Laird. *The Soar Cognitive Architecture*. MIT Press, 2012.
+
+[LH07] Shane Legg and Marcus Hutter. A collection of definitions of intelligence. In *Advances in Artificial General Intelligence*. IOS, 2007.
+
+[Loo06] Moshe Looks. *Competent Program Evolution*. PhD Thesis, Computer Science Department, Washington University, 2006.
+
+[Pei34] C. Peirce. *Collected papers: Volume V. Pragmatism and pragmaticism*. Harvard University Press. Cambridge MA., 1934.
+
+[Tur50] Alan Turing. Computing machinery and intelligence. *Mind*, 59, 1950.
+
+[Wan06] Pei Wang. *Rigid Flexibility: The Logic of Intelligence*. Springer, 2006.
+
+[Who64] Benjamin Lee Whorf. *Language, Thought and Reality*. 1964.
